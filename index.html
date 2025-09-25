@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Civic AI — Stay in the loop</title>
+  <meta name="description" content="Civic AI is building modern AI for local government. Join the list to stay updated." />
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#0f141b; --text:#e6edf3; --muted:#9fb0c0;
+      --brand:#0b5aa3; --brand-2:#10a7c3; --accent:#f6c23e;
+      --ring:rgba(16,167,195,.35); --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px; --radius-sm:10px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f9fb; --panel:#fff; --text:#0d1220; --muted:#516071; --ring:rgba(11,90,163,.25); --shadow:0 8px 24px rgba(13,18,32,.08) }
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(16,167,195,.10), transparent 60%),
+        radial-gradient(1000px 700px at 110% -10%, rgba(246,194,62,.10), transparent 55%),
+        var(--bg);
+      color:var(--text); font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
+      display:grid; place-items:center; padding:24px;
+    }
+    .wrap{width:100%; max-width:1000px; display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:center}
+    @media (max-width:900px){ .wrap{grid-template-columns:1fr; gap:28px} }
+    .brand{display:flex; align-items:center; gap:22px}
+    .brand img{width:132px; height:auto; filter:drop-shadow(0 12px 20px rgba(0,0,0,.25))}
+    .wordmark{font-weight:700; letter-spacing:.2px; font-size:28px}
+    .wordmark .ai{color:var(--accent)}
+    .card{background:var(--panel); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06)}
+    h1{margin:.2rem 0 1rem; font-size:40px; line-height:1.1}
+    p.lead{margin:.2rem 0 1.25rem; color:var(--muted); font-size:18px}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:560px){ .grid{grid-template-columns:1fr} }
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 6px}
+    input[type="text"],input[type="email"]{
+      width:100%; padding:12px 13px; border-radius:var(--radius-sm);
+      border:1px solid transparent; background:rgba(255,255,255,.04); color:var(--text); outline:none;
+    }
+    input::placeholder{color:rgba(159,176,192,.8)}
+    input:focus{border-color:var(--ring); box-shadow:0 0 0 4px var(--ring); background:rgba(255,255,255,.06)}
+    .cta{display:flex; gap:10px; margin-top:10px}
+    .btn{appearance:none; border:0; cursor:pointer; padding:12px 18px; border-radius:var(--radius-sm); font-weight:700}
+    .btn-primary{background:linear-gradient(135deg,var(--brand) 0%, var(--brand-2) 100%); color:#fff; box-shadow:0 8px 18px rgba(11,90,163,.25)}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:transparent; color:var(--muted)}
+    small.note{display:block; color:var(--muted); margin-top:12px}
+    .left{padding:28px; border-radius:var(--radius);
+      background: radial-gradient(500px 300px at 20% 0%, rgba(16,167,195,.12), transparent 60%),
+                  radial-gradient(400px 240px at 100% 30%, rgba(246,194,62,.12), transparent 55%),
+                  linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+      border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow)}
+    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(16,167,195,.12); color:var(--brand-2); font-weight:700; font-size:12px; border:1px solid rgba(16,167,195,.25)}
+    .status{margin-top:12px; font-size:14px}
+    .ok{color:#22c55e} .err{color:#ef4444}
+    footer{margin-top:18px; color:var(--muted); font-size:13px}
+    a{color:var(--brand-2); text-decoration:none} a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="left">
+      <div class="brand">
+        <div class="wordmark">Civic <span class="ai">AI</span></div>
+      </div>
+      <h1>Modern AI for local government</h1>
+      <p class="lead">Practical tools that help cities work smarter—starting with grants and staff reports—and a platform that unlocks an app marketplace for governments.</p>
+      <span class="badge">Stealth—invites rolling</span>
+    </section>
+
+    <section class="card">
+      <h2>Keep me posted</h2>
+      <form id="signup" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <input type="text" name="_gotcha" style="display:none" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="Civic AI — New signup" />
+        <div class="grid">
+          <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Alex Rivera" /></div>
+          <div><label for="email">Work Email *</label><input id="email" name="email" type="email" required placeholder="alex@city.gov" /></div>
+          <div><label for="org">Organization</label><input id="org" name="organization" type="text" placeholder="City of … / Company" /></div>
+          <div><label for="role">Role</label><input id="role" name="role" type="text" placeholder="CIO, Grants Manager, etc." /></div>
+        </div>
+        <div class="cta">
+          <button class="btn btn-primary" type="submit">Join the list</button>
+          <button class="btn btn-ghost" type="reset">Clear</button>
+        </div>
+        <div id="status" class="status"></div>
+        <small class="note">We’ll email occasional updates—no spam, no sharing. Unsubscribe anytime.</small>
+      </form>
+      <footer>Media or partnership inquiries? <a href="mailto:hello@civicai.example">hello@civicai.example</a></footer>
+    </section>
+  </main>
+  <script>
+    const form=document.getElementById('signup');
+    const status=document.getElementById('status');
+    form.addEventListener('submit',async(e)=>{
+      e.preventDefault();status.textContent='Sending…';
+      try{
+        const data=new FormData(form);
+        const res=await fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:data});
+        if(res.ok){form.reset();status.innerHTML='<span class="ok">Thanks! You’re on the list.</span>'}
+        else{status.innerHTML='<span class="err">Submission failed. Please try again.</span>'}
+      }catch(err){status.innerHTML='<span class="err">Network error. Please retry.</span>'}
+    });
+  </script>
+</body>
+</html>
